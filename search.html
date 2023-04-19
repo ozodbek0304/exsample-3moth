@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./styles/css/main.css">
+    <title>Search</title>
+</head>
+<body class="bg-light">
+<header class="sticky-top">
+    <div class="container">
+        <nav class="d-flex justify-content-between align-items-center">
+            <div class="sider">
+                <label for="aside"><i class="fa-solid fa-bars bars1"></i></label>
+                <input type="checkbox" id="aside" hidden>
+                <aside class="sidbar">
+                    <label for="aside"><i class="fa-solid fa-xmark d-flex gap-3 bars"></i></label>
+                    <ul class="d-flex gap-3 px-5  list-unstyled flex-column ">
+                        <li><a class="text-decoration-none text-reset btn" href="index.html#collection">Brands</a></li>
+                        <li><a class="text-decoration-none text-reset btn" href="index.html#premium">Premium</a></li>
+                        <li><a class="text-decoration-none text-reset btn" href="index.html#newproducts">New Products</a></li>
+                        <li><a class="text-decoration-none text-reset btn" href="index.html#bestseller">Best Sellers</a></li>
+                        <li><a class="text-decoration-none text-reset btn" href="#">Search <i
+                                    class="fa-solid fa-magnifying-glass"></i></a></li>
+                    </ul>
+                </aside>
+            </div>
+            <img src="./images/logo.svg" alt="logo.svg" class="logo">
+            <ul class="d-flex gap-5 list-unstyled all">
+                <li><a class="text-decoration-none text-reset btn" href="index.html#collection">Brands</a></li>
+                <li><a class="text-decoration-none text-reset btn" href="index.html#premium">Premium</a></li>
+                <li><a class="text-decoration-none text-reset btn" href="index.html#newproducts">New Products</a></li>
+                <li><a class="text-decoration-none text-reset btn" href="index.html#bestseller">Best Sellers</a></li>
+                <li><a class="text-decoration-none text-reset btn" href="#">Search <i
+                            class="fa-solid fa-magnifying-glass"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="container py-5">
+ <form id="head" class="d-flex">
+     <input type="search" id="searchVal" class="w-100 d-block form-control">
+ </form>
+</div>
+ <div class="container boxs1 d-flex flex-wrap gap-3 pt-5" ></div>
+<footer class=" bg-white foot">
+    <div class="container d-flex justify-content-between py-5 flex-wrap row-gap-5 ">
+        <div>
+            <img src="./images/logo.svg" alt="logo.svg" class="pb-4">
+            <p class="ipsum">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio, dolorum
+                nesciunt inventore hic voluptatibus incidunt.</p>
+            <div class="d-flex gap-5 fs-5">
+                <a target="_blank" href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a target="_blank" href="https://linkiedin.com"><i class="fa-brands fa-linkedin"></i></a>
+                <a target="_blank" href="https://dribbble.com"><i class="fa-brands fa-dribbble"></i></a>
+            </div>
+        </div>
+        <div class="d-flex flex-column">
+            <h2>Catalog</h2>
+            <a class="text-reset  text-decoration-none" href="#">Necklace</a>
+            <a class="text-reset  text-decoration-none" href="#">Hoodies</a>
+            <a class="text-reset  text-decoration-none" href="#">Jewellr Box</a>
+            <a class="text-reset  text-decoration-none" href="#">T-shirt</a>
+            <a class="text-reset  text-decoration-none" href="#">Jacket</a>
+        </div>
+        <div class="d-flex flex-column about">
+            <h2>ABOUT US</h2>
+            <a class="text-reset text-decoration-none" href="#">Our Producers</a>
+            <a class="text-reset text-decoration-none" href="#">Sitemap</a>
+            <a class="text-reset text-decoration-none" href="#">FAQ</a>
+            <a class="text-reset text-decoration-none" href="#">About Us</a>
+            <a class="text-reset text-decoration-none" href="#">Terms & Conditions</a>
+        </div>
+        <div class="d-flex flex-column">
+            <h2>CUSTOMER SERVICES</h2>
+            <a class="text-reset text-decoration-none" href="#">Contact Us</a>
+            <a class="text-reset text-decoration-none" href="#">Track Your Order</a>
+            <a class="text-reset text-decoration-none" href="#">Product Care & Repair</a>
+            <a class="text-reset text-decoration-none" href="#">Book an Appointmnet</a>
+            <a class="text-reset text-decoration-none" href="#">Shipping & Returns</a>
+        </div>
+
+    </div>
+</footer>
+<footer class="bg-dark text-light">
+    <div class="container d-flex justify-content-between py-3 flex-wrap row-gap-2">
+        <a class="text-reset text-decoration-none" href="#">
+            &copy;2022 Tribute , Inc
+        </a>
+        <div>
+            <img src="./images/payments.png" alt="">
+
+        </div>
+        <a href="#header" class="text-reset text-decoration-none btn">Scroll to top <i
+                class="fa-solid fa-arrow-up"></i></a>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./js/search.js"></script>
+</body>
+</html>
