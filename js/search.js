@@ -209,89 +209,68 @@ let products = [
 
 let boxs1 = document.querySelector(".boxs1");
 
-products.forEach((item) => {
-  let elp = document.createElement("p");
-  let elp1 = document.createElement("p");
+function render(product) {
+  let index = 0;
+  boxs1.innerHTML = "";
+  product.forEach((item) => {
+    let elp = document.createElement("p");
+    let elp1 = document.createElement("p");
 
-  let elh5 = document.createElement("h5");
-  elh5.innerText = item.title;
-  elh5.classList.add("elh5");
+    let elh5 = document.createElement("h5");
+    elh5.innerText = item.title;
+    elh5.classList.add("elh5");
 
-  let icon = document.createElement("i");
-  icon.className = "fa-solid fa-star mt-1 ";
-  icon.classList.add("icon");
-  let star = document.createElement("div");
-  star.className = "d-flex gap-1";
+    let icon = document.createElement("i");
+    icon.className = "fa-solid fa-star mt-1 ";
+    icon.classList.add("icon");
+    let star = document.createElement("div");
+    star.className = "d-flex gap-1";
 
-  let image = document.createElement("img");
-  image.classList.add("img");
+    let image = document.createElement("img");
+    image.classList.add("img");
 
-  let card = document.createElement("div");
-  card.classList.add("card1");
-  
-  let hover = document.createElement("div");
-  hover.classList.add("hover");
+    let card = document.createElement("div");
+    card.classList.add("card1");
 
-  image.src = item.image;
-  image.style.height = "300px";
-  elp.innerText = `${item.rating.rate} / ${item.rating.count}`;
-  elp1.innerText = `$${item.price}`;
-  star.append(icon, elp);
-  hover.append(star, elp1);
-  card.appendChild(image);
-  card.append(elh5);
-  card.appendChild(hover);
-  boxs1.appendChild(card);
-});
+    let hover = document.createElement("div");
+    hover.classList.add("hover");
 
+    let btn = document.createElement("button");
+    btn.innerText = "O'chirish";
+    btn.classList.add("btn", "btn-success");
+    btn.style.transform="translateY(-5px)"
+    btn.setAttribute("onclick", `indexById(${index})`);
+
+    image.src = item.image;
+    image.style.height = "300px";
+    elp.innerText = `${item.rating.rate} / ${item.rating.count}`;
+    elp1.innerText = `$${item.price}`;
+    star.append(icon, elp);
+    hover.append(star, btn,elp1);
+    card.appendChild(image);
+    card.append(elh5);
+    card.appendChild(hover);
+    boxs1.appendChild(card);
+    index++;
+  });
+
+} render(products);
 
 let form = document.querySelector("form");
 let input = document.querySelector("#searchVal");
   
-  
- input.addEventListener("input", (e) => {
+input.addEventListener("input", (e) => {
   let text = e.target.value.toLowerCase();
   let newFiltired = products.filter((item) =>
     item.title.toLowerCase().includes(text) ||
     item.category.toLowerCase().includes(text) ||
     item.description.toLowerCase().includes(text)
   );
-  
-  
-  boxs1.innerHTML = "";
-  newFiltired.forEach(item => {
-      let elp = document.createElement("p");
-      let elp1 = document.createElement("p");
+  render(newFiltired);
+});
 
-      let elh5 = document.createElement("h5");
-      elh5.innerText = item.title;
-      elh5.classList.add("elh5");
-
-      let icon = document.createElement("i");
-      icon.className = "fa-solid fa-star mt-1 ";
-      icon.classList.add("icon");
-      let star = document.createElement("div");
-      star.className = "d-flex gap-1";
-
-      let image = document.createElement("img");
-      image.classList.add("img");
-
-      let card = document.createElement("div");
-      card.classList.add("card1");
-
-      let hover = document.createElement("div");
-      hover.classList.add("hover");
-
-      image.src = item.image;
-      image.style.height = "300px";
-      elp.innerText = `${item.rating.rate} / ${item.rating.count}`;
-      elp1.innerText = `$${item.price}`;
-      star.append(icon, elp);
-      hover.append(star, elp1);
-      card.appendChild(image);
-      card.append(elh5);
-      card.appendChild(hover);
-      boxs1.appendChild(card);
-  })
-})
+function indexById(index) {
+  products.splice(index, 1);
+  render(products);
+}
 
